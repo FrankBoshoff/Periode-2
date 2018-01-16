@@ -2,15 +2,60 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class HeadMovement : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField]
+    private Camera cam;
+
+    private Vector3 velocity = Vector3.zero;
+    private Vector3 rotation = Vector3.zero;
+    private Vector3 cameraRot = Vector3.zero;
+
+
+    private Rigidbody rb;
+
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+       
+    }
+
+    public void Move(Vector3 _velocity)
+    {
+        velocity = _velocity;
+    }
+
+    public void Rotate(Vector3 _rotation)
+    {
+        rotation = _rotation;
+    }
+
+    public void RotateCamera(Vector3 _cameraRot)
+    {
+        cameraRot = _cameraRot;
+    }
+
+    void FixedUpdate()
+    {
+        PerfromMovement();
+        PerformRotation();
+
+    }
+
+    void PerfromMovement ()
+    {
+        if (velocity != Vector3.zero)
+            rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+    }
+
+    void PerformRotation()
+    {
+        rb.MoveRotation(rb.rotation*Quaternion.Euler(rotation));
+        if (cam != null)
+        {
+            cam.transform.Rotate(-cameraRot);
+        }
+    }
+
 }
