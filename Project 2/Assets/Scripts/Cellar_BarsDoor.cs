@@ -7,7 +7,7 @@ public class Cellar_BarsDoor : MonoBehaviour {
     Animator animator;
     bool doorOpen;
 
-    private void Start()
+    void Start()
     {
         doorOpen = false;
         animator = GetComponent<Animator>();
@@ -17,24 +17,24 @@ public class Cellar_BarsDoor : MonoBehaviour {
     private void OnTriggerEnter(Collider col)
     {
 
-        if (col.gameObject.tag == "player")
+        if (col.gameObject.tag == "Player")
         {
             doorOpen = true;
-            Door("Open");
+            DoorControl("Open");
         }
     }
 
     private void OnTriggerExit(Collider col)
     {
 
-        if (col.gameObject.tag == "player")
+        if (doorOpen)
         {
             doorOpen = false;
-            Door("Close");
+            DoorControl("Close");
         }
     }
 
-    void Door(string direction)
+    void DoorControl(string direction)
     {
         animator.SetTrigger(direction);
     }

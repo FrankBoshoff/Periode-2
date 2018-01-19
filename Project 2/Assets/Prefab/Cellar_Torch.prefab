@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4173588095417226}
   - component: {fileID: 33231637687042358}
   - component: {fileID: 23964342812725478}
+  - component: {fileID: 65161355573118342}
   m_Layer: 0
   m_Name: Cellar_Torch
   m_TagString: Untagged
@@ -67,15 +68,15 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1012055752826126}
-  m_LocalRotation: {x: -0.5, y: -0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 11.153, y: 1.313, z: 11.005}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
+  m_LocalPosition: {x: 21.2161, y: 1.313, z: 6.562}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4393406143092944}
   - {fileID: 4471369540008198}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
 --- !u!4 &4393406143092944
 Transform:
   m_ObjectHideFlags: 1
@@ -143,6 +144,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1012055752826126}
   m_Mesh: {fileID: 4300000, guid: 1c0b15edaf14a0f408700bf2811df902, type: 3}
+--- !u!65 &65161355573118342
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1012055752826126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.30153584, y: 0.28117448, z: 0.6942784}
+  m_Center: {x: -0.18076794, y: -0.000000029802322, z: 0.10154486}
 --- !u!108 &108259708659219826
 Light:
   m_ObjectHideFlags: 1
