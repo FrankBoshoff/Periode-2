@@ -4,7 +4,7 @@ public class Cellar_Door : MonoBehaviour {
 
     Animator animator;
     public int handleCount;
-    bool one;
+    bool checkActive = true;
 	
 	void Start ()
     {
@@ -13,21 +13,21 @@ public class Cellar_Door : MonoBehaviour {
 	
 	public void Update()
     {
-        if (handleCount >= 2 && one == true)
+        if (handleCount >= 2 && checkActive == true)
         {
             Activate("Open");
-            print("open");
-            one = false;
+            checkActive = false;
+
         }
-        if(handleCount <= 1 && one == false)
+        if (handleCount <= 1 && checkActive == false)
         {
             Activate("Close");
-            print("dicht");
-            one = true;
+            checkActive = true;
         }
+        
     }
 
-    void Activate(string direction)
+    public void Activate(string direction)
     {
         animator.SetTrigger(direction);
     }

@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Level1_Cellar.unity
+    guid: e1f1d30aee9d44440b9ffdae3c00bb60
+  - enabled: 1
+    path: Assets/Level1_Fort.unity
+    guid: 1607d658c903e0d4a8dcc50971a745cb

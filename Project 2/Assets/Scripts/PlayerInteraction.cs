@@ -16,20 +16,16 @@ public class PlayerInteraction : MonoBehaviour {
         {
             Interaction();
         }
-
 	}
 
     void Interaction()
     {
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
-        {
-            
-
+        {         
             Handle handle = hit.transform.GetComponent<Handle>();
             if (handle != null)
             {
-                Debug.Log(hit.transform.name);
                 handle.OnOff(state);
             }
 

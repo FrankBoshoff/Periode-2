@@ -2,9 +2,10 @@
 
 public class Handle : MonoBehaviour {
 
-    Animator animator;
+    private Animator animator;
     public int handle;
     public GameObject door;
+        
 
     private void Start()
     {
