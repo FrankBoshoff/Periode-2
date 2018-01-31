@@ -25,7 +25,7 @@ public class ElectricGun : MonoBehaviour
     void Shoot()
     {
         electricBall.Play();
-
+        FindObjectOfType<AudioManager>().Play("Electric");
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
