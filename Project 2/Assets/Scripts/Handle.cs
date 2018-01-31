@@ -18,13 +18,13 @@ public class Handle : MonoBehaviour {
         if (handle == 1)
         {         
             HandleConrol("Open");
-            door.GetComponent<Cellar_Door>().handleCount += 1;
+            door.GetComponent<Door>().handleCount += 1;
         }
         if (handle >= 2)
         {
             HandleConrol("Close");
             handle = 0;
-            door.GetComponent<Cellar_Door>().handleCount -= 1;
+            door.GetComponent<Door>().handleCount -= 1;
         }
 
     }
